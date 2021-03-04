@@ -1,0 +1,3 @@
+flake8
+slack_sdk
+twine
