@@ -1,7 +1,7 @@
 # slack_webhook
 
-This is a simple wrapper over the slack_sdk for sending messages into a specific
-slack channel.
+This is a simple python API for sending messages into a specific
+slack channel using incoming webhook.
 
 ## Prerequisite
 

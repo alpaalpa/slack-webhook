@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="slack-webhook-alpa", # Replace with your own username
-    version="0.0.3",
+    version="0.0.4",
     author="Albert Pang",
     author_email="alpaaccount@mac.com",
     description="Wrapper for slack_sdk",
