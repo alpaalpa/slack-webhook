@@ -38,7 +38,7 @@ class SlackWebhook():
         self._username = username
         self._icon_emoji = icon_emoji
 
-    def send(self, text):
+    def send(self, text="", blocks=None):
         """send a text message into the configured channel
 
         Parameters
@@ -49,6 +49,8 @@ class SlackWebhook():
         payload = {
             'text': text
         }
+        if blocks:
+            payload['blocks'] = blocks
         if self.channel:
             payload['channel'] = self.channel
         if self.username:
@@ -61,7 +63,8 @@ class SlackWebhook():
             if r.status_code == 404:
                 raise SlackWebhookException('API call return 404 error')
             elif r.status_code != 200:
-                raise SlackWebhookException(f'Abnormal status sode from API call: {r.status_code} ({r.text})')
+                raise SlackWebhookException(f'Abnormal status sode from API call:'
+                                            f' {r.status_code} ({r.text})')
         except SlackWebhookException as e:
             logger.error(e)
 

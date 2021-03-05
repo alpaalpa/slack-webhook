@@ -39,6 +39,24 @@ slack_alert = SlackWebhook(url)
 slack_alert.send('TEST TEST TEST')
 ```
 
-## TODO
-- support for fancy formatting of message
+Content formatted in block kit is also supported.
+
+```
+blocks = [
+    {
+        "type": "header",
+        "text": {
+            "text": "\ud83d\udd34 This is a header",
+            "type": "plain_text",
+            "emoji": true
+        }
+    }
+]
+
+slack_alert.send('TEST TEST TEST', blocks=blocks)
+```
+
+## References
+- https://api.slack.com/messaging/webhooks
+- https://pypi.org/project/blockkit/
 
