@@ -68,6 +68,8 @@ class SlackWebhook():
         except SlackWebhookException as e:
             logger.error(e)
 
+        return r
+
     @property
     def channel(self):
         return self._channel
